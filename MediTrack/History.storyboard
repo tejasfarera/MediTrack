@@ -15,9 +15,25 @@
                     <view key="view" contentMode="scaleToFill" id="ruV-0t-Zo9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lmr-3R-0Bl">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="FEY-7p-tXj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lmr-3R-0Bl" firstAttribute="centerX" secondItem="FEY-7p-tXj" secondAttribute="centerX" id="5Oe-Kb-3mJ"/>
+                            <constraint firstItem="lmr-3R-0Bl" firstAttribute="leading" secondItem="FEY-7p-tXj" secondAttribute="leading" id="NWa-Dx-x4j"/>
+                            <constraint firstItem="lmr-3R-0Bl" firstAttribute="width" secondItem="ruV-0t-Zo9" secondAttribute="width" id="iW8-uB-f7O"/>
+                            <constraint firstItem="lmr-3R-0Bl" firstAttribute="top" secondItem="FEY-7p-tXj" secondAttribute="top" id="pDh-tb-qZK"/>
+                            <constraint firstItem="lmr-3R-0Bl" firstAttribute="bottom" secondItem="FEY-7p-tXj" secondAttribute="bottom" id="sST-iN-bQD"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="historyTableView" destination="lmr-3R-0Bl" id="QmM-9r-V2T"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qQe-ag-on8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
