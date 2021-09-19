@@ -14,6 +14,8 @@
 		0490EB3326F78F300061AA77 /* MediTrack.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0490EB3126F78F300061AA77 /* MediTrack.xcdatamodeld */; };
 		0490EB3526F78F300061AA77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0490EB3426F78F300061AA77 /* Assets.xcassets */; };
 		0490EB3826F78F300061AA77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0490EB3626F78F300061AA77 /* LaunchScreen.storyboard */; };
+		0490EB4526F7A3530061AA77 /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0490EB4426F7A3530061AA77 /* History.storyboard */; };
+		0490EB4826F7A37B0061AA77 /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490EB4726F7A37B0061AA77 /* HistoryVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		0490EB3426F78F300061AA77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0490EB3726F78F300061AA77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0490EB3926F78F300061AA77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0490EB4426F7A3530061AA77 /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
+		0490EB4726F7A37B0061AA77 /* HistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,8 @@
 				0490EB2826F78F300061AA77 /* AppDelegate.swift */,
 				0490EB2A26F78F300061AA77 /* SceneDelegate.swift */,
 				0490EB2C26F78F300061AA77 /* HomeVC.swift */,
+				0490EB4726F7A37B0061AA77 /* HistoryVC.swift */,
+				0490EB4426F7A3530061AA77 /* History.storyboard */,
 				0490EB2E26F78F300061AA77 /* Home.storyboard */,
 				0490EB3426F78F300061AA77 /* Assets.xcassets */,
 				0490EB3626F78F300061AA77 /* LaunchScreen.storyboard */,
@@ -130,6 +136,7 @@
 				0490EB3826F78F300061AA77 /* LaunchScreen.storyboard in Resources */,
 				0490EB3526F78F300061AA77 /* Assets.xcassets in Resources */,
 				0490EB3026F78F300061AA77 /* Home.storyboard in Resources */,
+				0490EB4526F7A3530061AA77 /* History.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0490EB2D26F78F300061AA77 /* HomeVC.swift in Sources */,
+				0490EB4826F7A37B0061AA77 /* HistoryVC.swift in Sources */,
 				0490EB2926F78F300061AA77 /* AppDelegate.swift in Sources */,
 				0490EB3326F78F300061AA77 /* MediTrack.xcdatamodeld in Sources */,
 				0490EB2B26F78F300061AA77 /* SceneDelegate.swift in Sources */,
