@@ -15,8 +15,64 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="PGO-eE-9m2">
+                                <rect key="frame" x="41.5" y="94.5" width="331" height="717"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="AU4-B6-4Iw">
+                                        <rect key="frame" x="0.0" y="0.0" width="331" height="478"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Good Morning" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23c-aL-akF">
+                                                <rect key="frame" x="0.0" y="0.0" width="331" height="119.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today's Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRU-Cg-aB6">
+                                                <rect key="frame" x="0.0" y="119.5" width="331" height="119.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mWI-lG-DpW">
+                                                <rect key="frame" x="0.0" y="239" width="331" height="239"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="200"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="gRU-Cg-aB6" firstAttribute="height" secondItem="23c-aL-akF" secondAttribute="height" id="I88-lC-dxu"/>
+                                            <constraint firstItem="mWI-lG-DpW" firstAttribute="height" secondItem="gRU-Cg-aB6" secondAttribute="height" multiplier="2" id="L6I-Xc-6Ry"/>
+                                        </constraints>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R9C-sT-Cww">
+                                        <rect key="frame" x="0.0" y="478" width="331" height="179"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qhV-RQ-hgJ">
+                                        <rect key="frame" x="0.0" y="657" width="331" height="60"/>
+                                        <color key="backgroundColor" red="0.10980392160000001" green="0.20000000000000001" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="KPD-Md-Nx5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <state key="normal" title="Medicine Taken">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="PGO-eE-9m2" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="2Qd-q1-JMm"/>
+                            <constraint firstItem="PGO-eE-9m2" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.8" id="466-sz-aVT"/>
+                            <constraint firstItem="mWI-lG-DpW" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.266741" id="SIj-uT-q07"/>
+                            <constraint firstItem="PGO-eE-9m2" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="aDF-qF-GIW"/>
+                            <constraint firstItem="PGO-eE-9m2" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="wmY-N7-Nhl"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
