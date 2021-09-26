@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040FF96327002E3B000A1888 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040FF96227002E3B000A1888 /* HomePresenter.swift */; };
+		040FF96627002E54000A1888 /* HistoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040FF96527002E54000A1888 /* HistoryPresenter.swift */; };
+		040FF96927002E91000A1888 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040FF96827002E91000A1888 /* HomeModel.swift */; };
+		040FF96C27002EA0000A1888 /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040FF96B27002EA0000A1888 /* HistoryModel.swift */; };
 		0490EB2926F78F300061AA77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490EB2826F78F300061AA77 /* AppDelegate.swift */; };
 		0490EB2B26F78F300061AA77 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490EB2A26F78F300061AA77 /* SceneDelegate.swift */; };
 		0490EB2D26F78F300061AA77 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490EB2C26F78F300061AA77 /* HomeVC.swift */; };
@@ -18,9 +22,16 @@
 		0490EB4826F7A37B0061AA77 /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490EB4726F7A37B0061AA77 /* HistoryVC.swift */; };
 		0490EB4C26F7A92E0061AA77 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490EB4A26F7A92E0061AA77 /* HistoryTableViewCell.swift */; };
 		0490EB4D26F7A92E0061AA77 /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0490EB4B26F7A92E0061AA77 /* HistoryTableViewCell.xib */; };
+		049AFBB92700DCFE00796C0B /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049AFBB82700DCFE00796C0B /* CoreDataManager.swift */; };
+		049AFBBE2700DD6200796C0B /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049AFBBD2700DD6200796C0B /* Utilities.swift */; };
+		049AFBC22700DDA200796C0B /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049AFBC12700DDA200796C0B /* UIViewController+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		040FF96227002E3B000A1888 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomePresenter.swift; path = ../../../../../HomePresenter.swift; sourceTree = "<group>"; };
+		040FF96527002E54000A1888 /* HistoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryPresenter.swift; sourceTree = "<group>"; };
+		040FF96827002E91000A1888 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		040FF96B27002EA0000A1888 /* HistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryModel.swift; sourceTree = "<group>"; };
 		0490EB2526F78F300061AA77 /* MediTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0490EB2826F78F300061AA77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0490EB2A26F78F300061AA77 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -34,6 +45,9 @@
 		0490EB4726F7A37B0061AA77 /* HistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
 		0490EB4A26F7A92E0061AA77 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		0490EB4B26F7A92E0061AA77 /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
+		049AFBB82700DCFE00796C0B /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		049AFBBD2700DD6200796C0B /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		049AFBC12700DDA200796C0B /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +61,79 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		040FF95927002CF1000A1888 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				040FF95B27002D23000A1888 /* Home */,
+				040FF95A27002D18000A1888 /* History */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		040FF95A27002D18000A1888 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				0490EB4726F7A37B0061AA77 /* HistoryVC.swift */,
+				040FF96527002E54000A1888 /* HistoryPresenter.swift */,
+				040FF96B27002EA0000A1888 /* HistoryModel.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		040FF95B27002D23000A1888 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				0490EB2C26F78F300061AA77 /* HomeVC.swift */,
+				040FF96227002E3B000A1888 /* HomePresenter.swift */,
+				040FF96827002E91000A1888 /* HomeModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		040FF95C27002D39000A1888 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				0490EB3626F78F300061AA77 /* LaunchScreen.storyboard */,
+				0490EB4426F7A3530061AA77 /* History.storyboard */,
+				0490EB2E26F78F300061AA77 /* Home.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		040FF95D27002D9C000A1888 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				0490EB2826F78F300061AA77 /* AppDelegate.swift */,
+				0490EB2A26F78F300061AA77 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		040FF95E27002DBC000A1888 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				040FF95F27002DD2000A1888 /* History */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		040FF95F27002DD2000A1888 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				0490EB4A26F7A92E0061AA77 /* HistoryTableViewCell.swift */,
+				0490EB4B26F7A92E0061AA77 /* HistoryTableViewCell.xib */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		040FF96027002DFD000A1888 /* CoreDataModel */ = {
+			isa = PBXGroup;
+			children = (
+				0490EB3126F78F300061AA77 /* MediTrack.xcdatamodeld */,
+			);
+			path = CoreDataModel;
+			sourceTree = "<group>";
+		};
 		0490EB1C26F78F2F0061AA77 = {
 			isa = PBXGroup;
 			children = (
@@ -66,20 +153,42 @@
 		0490EB2726F78F300061AA77 /* MediTrack */ = {
 			isa = PBXGroup;
 			children = (
-				0490EB2826F78F300061AA77 /* AppDelegate.swift */,
-				0490EB2A26F78F300061AA77 /* SceneDelegate.swift */,
-				0490EB2C26F78F300061AA77 /* HomeVC.swift */,
-				0490EB4726F7A37B0061AA77 /* HistoryVC.swift */,
-				0490EB4A26F7A92E0061AA77 /* HistoryTableViewCell.swift */,
-				0490EB4B26F7A92E0061AA77 /* HistoryTableViewCell.xib */,
-				0490EB4426F7A3530061AA77 /* History.storyboard */,
-				0490EB2E26F78F300061AA77 /* Home.storyboard */,
+				049AFBC02700DD8E00796C0B /* Extension */,
+				049AFBBC2700DD4800796C0B /* Utilities */,
+				049AFBB72700DCDB00796C0B /* Manager */,
+				040FF96027002DFD000A1888 /* CoreDataModel */,
+				040FF95E27002DBC000A1888 /* TableViewCells */,
+				040FF95D27002D9C000A1888 /* App */,
+				040FF95C27002D39000A1888 /* Storyboard */,
+				040FF95927002CF1000A1888 /* Modules */,
 				0490EB3426F78F300061AA77 /* Assets.xcassets */,
-				0490EB3626F78F300061AA77 /* LaunchScreen.storyboard */,
 				0490EB3926F78F300061AA77 /* Info.plist */,
-				0490EB3126F78F300061AA77 /* MediTrack.xcdatamodeld */,
 			);
 			path = MediTrack;
+			sourceTree = "<group>";
+		};
+		049AFBB72700DCDB00796C0B /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				049AFBB82700DCFE00796C0B /* CoreDataManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		049AFBBC2700DD4800796C0B /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				049AFBBD2700DD6200796C0B /* Utilities.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		049AFBC02700DD8E00796C0B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				049AFBC12700DDA200796C0B /* UIViewController+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,12 +263,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				040FF96327002E3B000A1888 /* HomePresenter.swift in Sources */,
 				0490EB4C26F7A92E0061AA77 /* HistoryTableViewCell.swift in Sources */,
+				049AFBC22700DDA200796C0B /* UIViewController+Extension.swift in Sources */,
+				040FF96927002E91000A1888 /* HomeModel.swift in Sources */,
 				0490EB2D26F78F300061AA77 /* HomeVC.swift in Sources */,
+				040FF96627002E54000A1888 /* HistoryPresenter.swift in Sources */,
 				0490EB4826F7A37B0061AA77 /* HistoryVC.swift in Sources */,
+				049AFBBE2700DD6200796C0B /* Utilities.swift in Sources */,
+				040FF96C27002EA0000A1888 /* HistoryModel.swift in Sources */,
 				0490EB2926F78F300061AA77 /* AppDelegate.swift in Sources */,
 				0490EB3326F78F300061AA77 /* MediTrack.xcdatamodeld in Sources */,
 				0490EB2B26F78F300061AA77 /* SceneDelegate.swift in Sources */,
+				049AFBB92700DCFE00796C0B /* CoreDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
