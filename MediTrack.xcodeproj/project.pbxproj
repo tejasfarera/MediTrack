@@ -25,6 +25,7 @@
 		049AFBB92700DCFE00796C0B /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049AFBB82700DCFE00796C0B /* CoreDataManager.swift */; };
 		049AFBBE2700DD6200796C0B /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049AFBBD2700DD6200796C0B /* Utilities.swift */; };
 		049AFBC22700DDA200796C0B /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049AFBC12700DDA200796C0B /* UIViewController+Extension.swift */; };
+		049AFBC8270115B900796C0B /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049AFBC7270115B900796C0B /* Date+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		049AFBB82700DCFE00796C0B /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		049AFBBD2700DD6200796C0B /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		049AFBC12700DDA200796C0B /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		049AFBC7270115B900796C0B /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				049AFBC12700DDA200796C0B /* UIViewController+Extension.swift */,
+				049AFBC7270115B900796C0B /* Date+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				040FF96C27002EA0000A1888 /* HistoryModel.swift in Sources */,
 				0490EB2926F78F300061AA77 /* AppDelegate.swift in Sources */,
 				0490EB3326F78F300061AA77 /* MediTrack.xcdatamodeld in Sources */,
+				049AFBC8270115B900796C0B /* Date+Extension.swift in Sources */,
 				0490EB2B26F78F300061AA77 /* SceneDelegate.swift in Sources */,
 				049AFBB92700DCFE00796C0B /* CoreDataManager.swift in Sources */,
 			);
