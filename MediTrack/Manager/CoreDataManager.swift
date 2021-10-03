@@ -14,7 +14,7 @@ class CoreDataManager {
         self.context = appDelegate?.persistentContainer.viewContext
     }
     
-    func saveDose(doseModel: DoseModel) -> Bool {
+    @discardableResult func saveDose(doseModel: DoseModel) -> Bool {
         
         guard let _context = self.context else {
             print("Can't find context for core data")
@@ -26,7 +26,6 @@ class CoreDataManager {
         
         newDose.setValue(doseModel.doseTiming.rawValue, forKey: Keys.doseTiming)
         newDose.setValue(doseModel.date, forKey: Keys.date)
-        newDose.setValue(doseModel.doseTiming.points, forKey: Keys.points)
         
         do {
            try _context.save()
@@ -79,6 +78,28 @@ class CoreDataManager {
     func isCurrentDoseTaken() {
         getDoseList().forEach { doseModel in
  
+        }
+    }
+    
+    func clearData() {
+        guard let _context = self.context else {
+            print("Can't find context for core data")
+            return
+        }
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Dose")
+        fetchRequest.returnsObjectsAsFaults = false
+        
+        do {
+            let results = try _context.fetch(fetchRequest)
+            for managedObject in results {
+                if let _managedObject = managedObject as? NSManagedObject {
+                    _context.delete(_managedObject)
+                }
+            }
+            try _context.save()
+        } catch let error as NSError {
+            print("Delete all my data in Dose error : \(error) \(error.userInfo)")
         }
     }
 }
