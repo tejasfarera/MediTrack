@@ -53,6 +53,22 @@ enum DoseTiming: String {
         }
     }
     
+    static func getColor(score: Int) -> UIColor {
+        if score >= 0 && score <= 40 {
+            return UIColor.red
+        }
+        
+        if score > 40 && score <= 70 {
+            return UIColor.orange
+        }
+        
+        if score > 70 {
+            return UIColor.green
+        }
+        
+        return UIColor.red
+    }
+    
     static func getScore(timingsInString: [DoseModel]) -> Int {
         var score: Int = 0
         

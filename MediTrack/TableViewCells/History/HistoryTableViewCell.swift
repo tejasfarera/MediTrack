@@ -10,10 +10,12 @@ class HistoryTableViewCell: UITableViewCell {
         let eveningTime: String
         let date: String
         let score: Int
+        let scoreColor: UIColor
         
         init(displayableDoseModel: DisplayableDoseModel) {
             self.date = displayableDoseModel.dateString
             self.score = DoseTiming.getScore(timingsInString: displayableDoseModel.doseModels)
+            self.scoreColor = DoseTiming.getColor(score: self.score)
             
             self.morningTime = displayableDoseModel.doseModels.first{ $0.doseTiming == .morning }?.date.time ?? ""
             self.afternoonTime = displayableDoseModel.doseModels.first{ $0.doseTiming == .noon }?.date.time ?? ""
@@ -54,6 +56,8 @@ class HistoryTableViewCell: UITableViewCell {
         self.morningStackView.isHidden = dataSource.morningTime.isEmpty
         self.afternoonStackView.isHidden = dataSource.afternoonTime.isEmpty
         self.eveningStackView.isHidden = dataSource.eveningTime.isEmpty
+        
+        self.scoreLabel.textColor = dataSource.scoreColor
     }
 }
 
