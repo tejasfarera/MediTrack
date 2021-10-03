@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		040FF96327002E3B000A1888 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040FF96227002E3B000A1888 /* HomePresenter.swift */; };
 		040FF96627002E54000A1888 /* HistoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040FF96527002E54000A1888 /* HistoryPresenter.swift */; };
 		040FF96927002E91000A1888 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040FF96827002E91000A1888 /* HomeModel.swift */; };
 		040FF96C27002EA0000A1888 /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040FF96B27002EA0000A1888 /* HistoryModel.swift */; };
@@ -29,7 +28,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		040FF96227002E3B000A1888 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomePresenter.swift; path = ../../../../../HomePresenter.swift; sourceTree = "<group>"; };
 		040FF96527002E54000A1888 /* HistoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryPresenter.swift; sourceTree = "<group>"; };
 		040FF96827002E91000A1888 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		040FF96B27002EA0000A1888 /* HistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryModel.swift; sourceTree = "<group>"; };
@@ -86,7 +84,6 @@
 			isa = PBXGroup;
 			children = (
 				0490EB2C26F78F300061AA77 /* HomeVC.swift */,
-				040FF96227002E3B000A1888 /* HomePresenter.swift */,
 				040FF96827002E91000A1888 /* HomeModel.swift */,
 			);
 			path = Home;
@@ -266,7 +263,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				040FF96327002E3B000A1888 /* HomePresenter.swift in Sources */,
 				0490EB4C26F7A92E0061AA77 /* HistoryTableViewCell.swift in Sources */,
 				049AFBC22700DDA200796C0B /* UIViewController+Extension.swift in Sources */,
 				040FF96927002E91000A1888 /* HomeModel.swift in Sources */,

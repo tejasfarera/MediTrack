@@ -4,6 +4,8 @@ class HistoryVC: UIViewController {
 
     @IBOutlet private weak var historyTableView: UITableView!
     
+    var presenter = HistoryPresenter()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,7 +23,7 @@ class HistoryVC: UIViewController {
 
 extension HistoryVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return presenter.displayableDoseList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -31,11 +33,12 @@ extension HistoryVC: UITableViewDelegate, UITableViewDataSource {
             return HistoryTableViewCell()
         }
         
+        cell.displayData(dataSource: HistoryTableViewCell.DataSource(displayableDoseModel: presenter.displayableDoseList[indexPath.row]))
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
-    
 }

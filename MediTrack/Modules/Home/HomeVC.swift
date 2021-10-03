@@ -22,6 +22,8 @@ class HomeVC: UIViewController {
 
 
     @IBAction func onPressMedicineTaken(_ sender: UIButton) {
+//        CoreDataManager.shared.saveDose(doseModel: DoseModel(doseTiming: .morning, date: Date().addingTimeInterval(TimeInterval(Constants.secondsInHour * 13))))
+//        CoreDataManager.shared.clearData()
         showHistory()
     }
 }

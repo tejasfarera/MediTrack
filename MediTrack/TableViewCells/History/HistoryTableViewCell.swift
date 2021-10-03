@@ -10,6 +10,15 @@ class HistoryTableViewCell: UITableViewCell {
         let eveningTime: String
         let date: String
         let score: Int
+        
+        init(displayableDoseModel: DisplayableDoseModel) {
+            self.date = displayableDoseModel.dateString
+            self.score = DoseTiming.getScore(timingsInString: displayableDoseModel.doseModels)
+            
+            self.morningTime = displayableDoseModel.doseModels.first{ $0.doseTiming == .morning }?.date.time ?? ""
+            self.afternoonTime = displayableDoseModel.doseModels.first{ $0.doseTiming == .noon }?.date.time ?? ""
+            self.eveningTime = displayableDoseModel.doseModels.first{ $0.doseTiming == .evening }?.date.time ?? ""
+        }
     }
     
     @IBOutlet weak var morningStackView: UIStackView!
@@ -35,6 +44,16 @@ class HistoryTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    
-    
+    func displayData(dataSource: DataSource) {
+        self.scoreLabel.text = dataSource.score.description
+        self.dateLabel.text = dataSource.date
+        self.morningTimeLabel.text = dataSource.morningTime
+        self.afternoonTimeLabel.text = dataSource.afternoonTime
+        self.eveningTimeLabel.text = dataSource.eveningTime
+        
+        self.morningStackView.isHidden = dataSource.morningTime.isEmpty
+        self.afternoonStackView.isHidden = dataSource.afternoonTime.isEmpty
+        self.eveningStackView.isHidden = dataSource.eveningTime.isEmpty
+    }
 }
+

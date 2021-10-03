@@ -1,9 +1,24 @@
 import Foundation
 import UIKit.UIColor
 
-struct DoseModel {
+struct DoseModel: Equatable {
     let doseTiming: DoseTiming
     let date: Date
+    
+    static func == (lhs: DoseModel, rhs: DoseModel) -> Bool {
+        return lhs.date.mmddyyy == rhs.date.mmddyyy
+    }
+}
+
+struct DisplayableDoseModel {
+    let dateString: String
+    var doseModels: [DoseModel]
+    
+    func getDoseTimings() -> [DoseTiming] {
+        var doseTimings: [DoseTiming] = []
+        doseTimings.forEach { doseTimings.append($0) }
+        return doseTimings
+    }
 }
 
 
@@ -36,6 +51,14 @@ enum DoseTiming: String {
         case .evening:
             return 40
         }
+    }
+    
+    static func getScore(timingsInString: [DoseModel]) -> Int {
+        var score: Int = 0
+        
+        timingsInString.forEach { score += $0.doseTiming.points }
+        
+        return score
     }
     
     func getStartTime() -> TimeInterval {
