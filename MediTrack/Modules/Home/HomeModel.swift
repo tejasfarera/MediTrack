@@ -21,24 +21,6 @@ struct DisplayableDoseModel {
     }
 }
 
-
-enum ScoringColor {
-    case red
-    case orange
-    case green
-    
-    func getTextColor() -> UIColor {
-        switch self {
-        case .red:
-            return UIColor.red
-        case .orange:
-            return UIColor.orange
-        case .green:
-            return UIColor.green
-        }
-    }
-}
-
 enum DoseTiming: String {
     case morning
     case noon
