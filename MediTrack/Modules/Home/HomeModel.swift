@@ -59,19 +59,21 @@ enum DoseTiming: String {
         return score
     }
     
-    func getStartTime() -> TimeInterval {
+    func getStartTime() -> Int {
         switch self {
         case .morning:
-            /// Start time will be 6:00 am so calculated 6 hours after a day
+            /// Start time will be 6:00 am
             return Constants.secondsInHour * 6
         case .noon:
+            /// Start time will be 12:00 pm
             return Constants.secondsInHour * 12
         case .evening:
+            /// Start time will be 05:00 pm
             return Constants.secondsInHour * 17
         }
     }
     
-    func getEndTime() -> TimeInterval {
+    func getEndTime() -> Int {
         switch self {
         case .morning:
             /// end time will be 11:59:59 am
@@ -82,6 +84,35 @@ enum DoseTiming: String {
         case .evening:
             /// end time will be 11:59:59 pm
             return (Constants.secondsInHour * 23) + (60 * 59) + (59)
+        }
+    }
+    
+    static func getDoseTiming() -> Self {
+        let dayTimeStamp = Date().getLocalDayTimeStamp
+        
+        if dayTimeStamp >= DoseTiming.morning.getStartTime() && dayTimeStamp <= DoseTiming.morning.getEndTime() {
+            return .morning
+        }
+        
+        if dayTimeStamp >= DoseTiming.noon.getStartTime() && dayTimeStamp <= DoseTiming.noon.getEndTime() {
+            return .noon
+        }
+        
+        if dayTimeStamp >= DoseTiming.evening.getStartTime() && dayTimeStamp <= DoseTiming.evening.getEndTime() {
+            return .evening
+        }
+        
+        return .morning
+    }
+    
+    var wishingText: String {
+        switch self {
+        case .morning:
+            return "Good Morning"
+        case .noon:
+            return "Good Afternoon"
+        case .evening:
+            return "Good Evening"
         }
     }
 }

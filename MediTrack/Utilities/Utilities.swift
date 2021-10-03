@@ -11,9 +11,9 @@ enum StoryBoardName: String {
 }
 
 struct Constants {
-    static let secondsInMinute: TimeInterval = 60
-    static let secondsInHour: TimeInterval = 60 * 60
-    static let secondsInDay: TimeInterval = 60 * 60 * 24
+    static let secondsInMinute: Int = 60
+    static let secondsInHour: Int = 60 * 60
+    static let secondsInDay: Int = 60 * 60 * 24
 }
 
 struct Keys {
