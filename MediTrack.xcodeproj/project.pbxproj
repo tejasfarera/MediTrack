@@ -25,6 +25,7 @@
 		049AFBBE2700DD6200796C0B /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049AFBBD2700DD6200796C0B /* Utilities.swift */; };
 		049AFBC22700DDA200796C0B /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049AFBC12700DDA200796C0B /* UIViewController+Extension.swift */; };
 		049AFBC8270115B900796C0B /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049AFBC7270115B900796C0B /* Date+Extension.swift */; };
+		9621DB4B27096439009882CF /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9621DB4A27096439009882CF /* HomePresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		049AFBBD2700DD6200796C0B /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		049AFBC12700DDA200796C0B /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		049AFBC7270115B900796C0B /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		9621DB4A27096439009882CF /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				0490EB2C26F78F300061AA77 /* HomeVC.swift */,
+				9621DB4A27096439009882CF /* HomePresenter.swift */,
 				040FF96827002E91000A1888 /* HomeModel.swift */,
 			);
 			path = Home;
@@ -270,6 +273,7 @@
 				040FF96627002E54000A1888 /* HistoryPresenter.swift in Sources */,
 				0490EB4826F7A37B0061AA77 /* HistoryVC.swift in Sources */,
 				049AFBBE2700DD6200796C0B /* Utilities.swift in Sources */,
+				9621DB4B27096439009882CF /* HomePresenter.swift in Sources */,
 				040FF96C27002EA0000A1888 /* HistoryModel.swift in Sources */,
 				0490EB2926F78F300061AA77 /* AppDelegate.swift in Sources */,
 				0490EB3326F78F300061AA77 /* MediTrack.xcdatamodeld in Sources */,

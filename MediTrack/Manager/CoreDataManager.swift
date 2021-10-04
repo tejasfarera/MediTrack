@@ -26,6 +26,7 @@ class CoreDataManager {
         
         newDose.setValue(doseModel.doseTiming.rawValue, forKey: Keys.doseTiming)
         newDose.setValue(doseModel.date, forKey: Keys.date)
+        newDose.setValue(doseModel.date.mmddyyy, forKey: Keys.dateString)
         
         do {
            try _context.save()
@@ -37,6 +38,13 @@ class CoreDataManager {
         return true
     }
     
+    func getFetchRequestToFetchDose() -> NSFetchRequest<NSFetchRequestResult> {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Dose")
+        request.returnsObjectsAsFaults = false
+        
+        return request
+    }
+    
     func getDoseList() -> [DoseModel] {
         
         var doseModel: [DoseModel] = []
@@ -46,23 +54,24 @@ class CoreDataManager {
             return doseModel
         }
         
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Dose")
-        request.returnsObjectsAsFaults = false
+        let request = getFetchRequestToFetchDose()
         
+        /// Added sorting param so that data fetched from core data already sorted in date ascending order
         let resultSortingParam = NSSortDescriptor(key: Keys.date, ascending: true)
         request.sortDescriptors = [resultSortingParam]
         
         do {
             let result = try _context.fetch(request)
             
-            result.forEach { (dose) in
+            result.forEach { dose in
                 
                 if let _dose = dose as? NSManagedObject,
                    let time = _dose.value(forKey: Keys.doseTiming) as? String,
-                   let date = _dose.value(forKey: Keys.date) as? Date {
+                   let date = _dose.value(forKey: Keys.date) as? Date,
+                   let doseTiming = DoseTiming(rawValue: time) {
                     
                     doseModel.append(
-                        DoseModel(doseTiming: DoseTiming(rawValue: time) ?? .morning, date: date)
+                        DoseModel(doseTiming: doseTiming, date: date)
                     )
                 }
             }
@@ -75,10 +84,78 @@ class CoreDataManager {
     }
     
     /// Used to calculate whether user has taken medicine for current timing
-    func isCurrentDoseTaken() {
-        getDoseList().forEach { doseModel in
- 
+    func isCurrentDoseTaken() -> Bool {
+        var isDoseTaken = false
+        
+        guard let _context = self.context else {
+            print("Can't find context for core data")
+            return false
         }
+        
+        let request = getFetchRequestToFetchDose()
+        
+        /// Added sorting param so that data fetched from core data already sorted in date descending order
+        let resultSortingParam = NSSortDescriptor(key: Keys.date, ascending: false)
+        request.sortDescriptors = [resultSortingParam]
+        
+        request.predicate = NSPredicate(format: "\(Keys.dateString) == %@", Date().mmddyyy)
+        
+        do{
+            let results = try _context.fetch(request)
+            
+            results.forEach { result in
+                if let _result = result as? NSManagedObject,
+                let time = _result.value(forKey: Keys.doseTiming) as? String,
+                let doseTiming = DoseTiming(rawValue: time),
+                doseTiming == DoseTiming.getDoseTiming() {
+                    isDoseTaken = true
+                }
+            }
+        } catch {
+            print("Error fetching data from context\(error)")
+        }
+        
+        return isDoseTaken
+    }
+    
+    /// Used to calculate whether user has taken medicine for current timing
+    func getTodaysDoses() -> [DoseModel] {
+        var doseModel: [DoseModel] = []
+        
+        guard let _context = self.context else {
+            print("Can't find context for core data")
+            return []
+        }
+        
+        let request = getFetchRequestToFetchDose()
+        
+        /// Added sorting param so that data fetched from core data already sorted in date ascending order
+        let resultSortingParam = NSSortDescriptor(key: Keys.date, ascending: true)
+        request.sortDescriptors = [resultSortingParam]
+        
+        /// query param to fetch data only when date is matched with current date as 04/09/2021
+        request.predicate = NSPredicate(format: "\(Keys.dateString) == %@", Date().mmddyyy)
+        
+        do{
+            let results = try _context.fetch(request)
+            
+            results.forEach { dose in
+                
+                if let _dose = dose as? NSManagedObject,
+                   let time = _dose.value(forKey: Keys.doseTiming) as? String,
+                   let date = _dose.value(forKey: Keys.date) as? Date,
+                   let doseTiming = DoseTiming(rawValue: time) {
+                    
+                    doseModel.append(
+                        DoseModel(doseTiming: doseTiming, date: date)
+                    )
+                }
+            }
+        } catch {
+            print("Error fetching data from context\(error)")
+        }
+        
+        return doseModel
     }
     
     func clearData() {
