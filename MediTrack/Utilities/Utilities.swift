@@ -14,6 +14,10 @@ struct Constants {
     static let secondsInMinute: Int = 60
     static let secondsInHour: Int = 60 * 60
     static let secondsInDay: Int = 60 * 60 * 24
+    
+    static let morningNotificationIdentifier = "morningNotificationIdentifier"
+    static let noonNotificationIdentifier = "noonNotificationIdentifier"
+    static let eveningNotificationIdentifier = "eveningNotificationIdentifier"
 }
 
 struct Keys {

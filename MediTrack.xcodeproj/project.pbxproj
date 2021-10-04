@@ -26,7 +26,19 @@
 		049AFBC22700DDA200796C0B /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049AFBC12700DDA200796C0B /* UIViewController+Extension.swift */; };
 		049AFBC8270115B900796C0B /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049AFBC7270115B900796C0B /* Date+Extension.swift */; };
 		9621DB4B27096439009882CF /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9621DB4A27096439009882CF /* HomePresenter.swift */; };
+		969A0B13270AB34300ED9A4F /* NotificationScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969A0B12270AB34300ED9A4F /* NotificationScheduler.swift */; };
+		969A0B1C270AB40900ED9A4F /* MediTrackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969A0B1B270AB40900ED9A4F /* MediTrackTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		969A0B1E270AB40900ED9A4F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0490EB1D26F78F2F0061AA77 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0490EB2426F78F300061AA77;
+			remoteInfo = MediTrack;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		040FF96527002E54000A1888 /* HistoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryPresenter.swift; sourceTree = "<group>"; };
@@ -50,10 +62,21 @@
 		049AFBC12700DDA200796C0B /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		049AFBC7270115B900796C0B /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		9621DB4A27096439009882CF /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		969A0B12270AB34300ED9A4F /* NotificationScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationScheduler.swift; sourceTree = "<group>"; };
+		969A0B19270AB40900ED9A4F /* MediTrackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MediTrackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		969A0B1B270AB40900ED9A4F /* MediTrackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediTrackTests.swift; sourceTree = "<group>"; };
+		969A0B1D270AB40900ED9A4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		0490EB2226F78F300061AA77 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		969A0B16270AB40900ED9A4F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -140,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				0490EB2726F78F300061AA77 /* MediTrack */,
+				969A0B1A270AB40900ED9A4F /* MediTrackTests */,
 				0490EB2626F78F300061AA77 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -148,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				0490EB2526F78F300061AA77 /* MediTrack.app */,
+				969A0B19270AB40900ED9A4F /* MediTrackTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -173,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				049AFBB82700DCFE00796C0B /* CoreDataManager.swift */,
+				969A0B12270AB34300ED9A4F /* NotificationScheduler.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -192,6 +218,15 @@
 				049AFBC7270115B900796C0B /* Date+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		969A0B1A270AB40900ED9A4F /* MediTrackTests */ = {
+			isa = PBXGroup;
+			children = (
+				969A0B1B270AB40900ED9A4F /* MediTrackTests.swift */,
+				969A0B1D270AB40900ED9A4F /* Info.plist */,
+			);
+			path = MediTrackTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +249,24 @@
 			productReference = 0490EB2526F78F300061AA77 /* MediTrack.app */;
 			productType = "com.apple.product-type.application";
 		};
+		969A0B18270AB40900ED9A4F /* MediTrackTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 969A0B20270AB40900ED9A4F /* Build configuration list for PBXNativeTarget "MediTrackTests" */;
+			buildPhases = (
+				969A0B15270AB40900ED9A4F /* Sources */,
+				969A0B16270AB40900ED9A4F /* Frameworks */,
+				969A0B17270AB40900ED9A4F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				969A0B1F270AB40900ED9A4F /* PBXTargetDependency */,
+			);
+			name = MediTrackTests;
+			productName = MediTrackTests;
+			productReference = 969A0B19270AB40900ED9A4F /* MediTrackTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -225,6 +278,10 @@
 				TargetAttributes = {
 					0490EB2426F78F300061AA77 = {
 						CreatedOnToolsVersion = 12.4;
+					};
+					969A0B18270AB40900ED9A4F = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 0490EB2426F78F300061AA77;
 					};
 				};
 			};
@@ -242,6 +299,7 @@
 			projectRoot = "";
 			targets = (
 				0490EB2426F78F300061AA77 /* MediTrack */,
+				969A0B18270AB40900ED9A4F /* MediTrackTests */,
 			);
 		};
 /* End PBXProject section */
@@ -259,6 +317,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		969A0B17270AB40900ED9A4F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -273,6 +338,7 @@
 				040FF96627002E54000A1888 /* HistoryPresenter.swift in Sources */,
 				0490EB4826F7A37B0061AA77 /* HistoryVC.swift in Sources */,
 				049AFBBE2700DD6200796C0B /* Utilities.swift in Sources */,
+				969A0B13270AB34300ED9A4F /* NotificationScheduler.swift in Sources */,
 				9621DB4B27096439009882CF /* HomePresenter.swift in Sources */,
 				040FF96C27002EA0000A1888 /* HistoryModel.swift in Sources */,
 				0490EB2926F78F300061AA77 /* AppDelegate.swift in Sources */,
@@ -283,7 +349,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		969A0B15270AB40900ED9A4F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				969A0B1C270AB40900ED9A4F /* MediTrackTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		969A0B1F270AB40900ED9A4F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0490EB2426F78F300061AA77 /* MediTrack */;
+			targetProxy = 969A0B1E270AB40900ED9A4F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0490EB2E26F78F300061AA77 /* Home.storyboard */ = {
@@ -461,6 +543,48 @@
 			};
 			name = Release;
 		};
+		969A0B21270AB40900ED9A4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6X226J9LK7;
+				INFOPLIST_FILE = MediTrackTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tejas.MediTrackTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MediTrack.app/MediTrack";
+			};
+			name = Debug;
+		};
+		969A0B22270AB40900ED9A4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6X226J9LK7;
+				INFOPLIST_FILE = MediTrackTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tejas.MediTrackTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MediTrack.app/MediTrack";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -478,6 +602,15 @@
 			buildConfigurations = (
 				0490EB3D26F78F300061AA77 /* Debug */,
 				0490EB3E26F78F300061AA77 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		969A0B20270AB40900ED9A4F /* Build configuration list for PBXNativeTarget "MediTrackTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				969A0B21270AB40900ED9A4F /* Debug */,
+				969A0B22270AB40900ED9A4F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

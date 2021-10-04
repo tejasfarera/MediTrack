@@ -120,6 +120,45 @@ enum DoseTiming: String {
             return isDoseTaken ? "Evening dose taken" : "Good Evening"
         }
     }
+    
+    var notificationTitle: String {
+        switch self {
+        case .idle:
+            return ""
+        case .morning:
+            return "Morning medicine"
+        case .noon:
+            return "Afternoon medicine"
+        case .evening:
+            return "Evening medicine"
+        }
+    }
+    
+    var notificationBody: String {
+        switch self {
+        case .idle:
+            return ""
+        case .morning:
+            return "It's time to take morning medicine"
+        case .noon:
+            return "It's time to take afternoon medicine"
+        case .evening:
+            return "It's time to take evening medicine"
+        }
+    }
+    
+    var notificationIdentifier: String {
+        switch self {
+        case .idle:
+            return ""
+        case .morning:
+            return Constants.morningNotificationIdentifier
+        case .noon:
+            return Constants.noonNotificationIdentifier
+        case .evening:
+            return Constants.eveningNotificationIdentifier
+        }
+    }
 }
 
 enum HomeButtonAction {
