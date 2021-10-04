@@ -10,24 +10,21 @@ struct DoseModel: Equatable {
     }
 }
 
-struct DisplayableDoseModel {
-    let dateString: String
-    var doseModels: [DoseModel]
-    
-    func getDoseTimings() -> [DoseTiming] {
-        var doseTimings: [DoseTiming] = []
-        doseTimings.forEach { doseTimings.append($0) }
-        return doseTimings
-    }
-}
 
 enum DoseTiming: String {
+    /// 12:00:00 AM to 05:59:59 AM idle time
+    case idle
+    /// 06:00:00 AM to 11:59:59 AM morning time
     case morning
+    /// 12:00:00 PM to 04:59:59 PM noon time
     case noon
+    /// 05:00:00 PM to 11:59:59 PM evening time
     case evening
     
     var points: Int {
         switch self {
+        case .idle:
+            return 0
         case .morning, .noon:
             return 30
         case .evening:
@@ -61,6 +58,9 @@ enum DoseTiming: String {
     
     func getStartTime() -> Int {
         switch self {
+        case .idle:
+            /// Start time will be 12:00 am
+            return Constants.secondsInHour * 0
         case .morning:
             /// Start time will be 6:00 am
             return Constants.secondsInHour * 6
@@ -75,6 +75,9 @@ enum DoseTiming: String {
     
     func getEndTime() -> Int {
         switch self {
+        case .idle:
+            /// end time will be 05:59:59 am
+            return (Constants.secondsInHour * 5) + (60 * 59) + (59)
         case .morning:
             /// end time will be 11:59:59 am
             return (Constants.secondsInHour * 11) + (60 * 59) + (59)
@@ -102,19 +105,42 @@ enum DoseTiming: String {
             return .evening
         }
         
-        return .morning
+        return .idle
     }
     
-    var wishingText: String {
+    func getwishingText(isDoseTaken: Bool) -> String {
         switch self {
+        case .idle:
+            return "Welcome"
         case .morning:
-            return "Good Morning"
+            return isDoseTaken ? "Morning dose taken" : "Good Morning"
         case .noon:
-            return "Good Afternoon"
+            return isDoseTaken ? "Afternoon dose taken" : "Good Afternoon"
         case .evening:
-            return "Good Evening"
+            return isDoseTaken ? "Evening dose taken" : "Good Evening"
         }
     }
 }
 
-
+enum HomeButtonAction {
+    case showHistory
+    case takeMedicine
+    
+    init(isDoseTaken: Bool) {
+        switch DoseTiming.getDoseTiming() {
+        case .idle:
+            self = .showHistory
+        case .morning, .noon, .evening:
+            self = isDoseTaken ? .showHistory : .takeMedicine
+        }
+    }
+    
+    var buttonTitle: String {
+        switch self {
+        case .showHistory:
+            return "Show History"
+        case .takeMedicine:
+            return "Take Medicine"
+        }
+    }
+}

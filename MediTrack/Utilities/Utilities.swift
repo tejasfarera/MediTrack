@@ -19,19 +19,6 @@ struct Constants {
 struct Keys {
     static let doseTiming = "doseTiming"
     static let date = "date"
+    static let dateString = "dateString"
     static let points = "points"
 }
-
-enum CustomDateFormatter: String {
-    
-    case mm_dd_yyy = "dd/mm/yyyy"
-    
-    
-    func formatter(date: Date) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = self.rawValue
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        return dateFormatter.string(from: date)
-    }
-}
-
