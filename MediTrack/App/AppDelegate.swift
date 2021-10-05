@@ -5,12 +5,9 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         
+        /// Ask user for notification permission
         NotificationScheduler.shared.askUserPermissionForNotifications()
-        
-        /// testing purpose
-//        NotificationScheduler.shared.scheduleNotification(dosetiming: .morning)
         
         return true
     }

@@ -56,6 +56,23 @@ enum DoseTiming: String {
         return score
     }
     
+    func getNotificationTimeInHours() -> Int {
+        switch self {
+        case .idle:
+            /// Start time will be 12:00 am
+            return 0
+        case .morning:
+            /// Start time will be 11:00 am
+            return 11
+        case .noon:
+            /// Start time will be 02:00 pm
+            return 14
+        case .evening:
+            /// Start time will be 08:00 pm
+            return 20
+        }
+    }
+    
     func getStartTime() -> Int {
         switch self {
         case .idle:
