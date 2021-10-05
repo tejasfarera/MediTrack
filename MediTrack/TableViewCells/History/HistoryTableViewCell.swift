@@ -38,6 +38,9 @@ class HistoryTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        self.contentView.subviews.first?.layer.borderWidth = 1
+        self.contentView.subviews.first?.layer.borderColor = UIColor.lightGray.cgColor
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

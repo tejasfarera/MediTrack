@@ -33,21 +33,11 @@ class NotificationScheduler {
     }
     
     func createNotifications() {
-        let identifierList = listAllNotificationRequests()
         
-        /// safe checks to make notification trigger only if that notification trigger don't exist already
-        
-        if !identifierList.contains(DoseTiming.morning.notificationIdentifier) {
-            self.scheduleNotification(dosetiming: .morning)
-        }
-        
-        if !identifierList.contains(DoseTiming.noon.notificationIdentifier) {
-            self.scheduleNotification(dosetiming: .noon)
-        }
-        
-        if !identifierList.contains(DoseTiming.evening.notificationIdentifier) {
-            self.scheduleNotification(dosetiming: .evening)
-        }
+        /// Directly schedule notification as notification with same identifier will replaced with the updated one
+        self.scheduleNotification(dosetiming: .morning)
+        self.scheduleNotification(dosetiming: .noon)
+        self.scheduleNotification(dosetiming: .evening)
     }
     
     func scheduleNotification(dosetiming: DoseTiming) {
@@ -79,14 +69,13 @@ class NotificationScheduler {
         }
     }
     
-    func listAllNotificationRequests() -> [String] {
-        var notificationIdentifierList: [String] = []
+    func listAllNotificationRequests() {
+        
         notificationCenter.getPendingNotificationRequests {
             $0.forEach {
-                notificationIdentifierList.append($0.identifier)
+                print($0.identifier)
             }
         }
-        return notificationIdentifierList
     }
     
     ///NOTE: This method isn't working, can't create trigger for tomorrow date, it creates trigger for current date
